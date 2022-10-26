@@ -6,5 +6,7 @@ describe('Given we access our home route', () => {
 		const response = await request(app).get('/');
 
 		expect(response.statusCode).toBe(200);
+		expect(response.body).toHaveProperty('data');
+		expect(response.body.data).toBe('Hello World!');
 	});
 });
